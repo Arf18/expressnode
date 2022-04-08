@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>new Article</title>
+</head>
+<style>
+    
+    h1{
+        margin:20px;
+        color:rgb(243, 74, 74);
+    }
+</style>
+
+<style>.form-group{
+    border-radius: 5px;
+    
+}
+.form-group label{
+    color:white;
+    
+    font-weight: bold;
+    margin-left: 20px;
+    
+}
+.form-group input{
+    width: 70%;
+    margin: 10px 20px 40px 20px;
+    height:2rem;
+    border-radius: 5px;
+
+}
+
+img{
+    width:500px;
+    height:600px;
+}
+.container .img{
+    position: absolute;
+    right:calc((100% - 500px)/10);
+    top:18%;
+}
+
+</style>
+
+
+
+<body>
+    
+    <div class="container">
+        <div class="img">
+            <img src="—Pngtree—video blogger making video for_7256710.png">
+        </div>
+        <h1 id="newarticle">New Article</h1>
+        <form action = "/NewArticle" method = "POST">
+            <%-include("form_fields")%>
+            
+        </form>
+
+       
+        
+        
+    
+        
+        
+    </div>
+</body>
+
+</html>

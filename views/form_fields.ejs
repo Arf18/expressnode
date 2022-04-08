@@ -1,0 +1,149 @@
+<div class="form-group">
+    <label for="title">title</label></br>
+    <input onkeydown="return event.key != 'Enter'" required type = "text" name = "title" id = "title" >
+
+</div>
+
+
+<div class="form-group">
+    <label for="description">Description</label></br>
+    <textarea name = "description" id ="description"></textarea>
+</div>
+
+
+<div class="form-group">
+    <label for="markdown">Mark Down</label></br>
+    <textarea name = "markdown" id ="markdown"></textarea>
+</div>
+
+
+<div class="form-group">
+    <label for="tags">Tag</label> <button value = "1" onclick="showHelp()" id = "HelpBtn" type = "button">How To Add Tag</button></br>
+    <input onkeydown="return event.key != 'Enter'" type="text" name ="tag" id="tag"  value="">      
+    
+    
+</div> 
+
+
+
+<button id = "save" type="submit" formaction="/NewArticle">Save</button>
+<a id = "home" href="\">Home</a>
+
+<style>
+    body{
+        margin:0;
+        padding:0;
+        background-color: #302B31;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .form-group{
+        border-radius: 5px;
+        position: relative;
+        
+    }
+    .form-group label{
+        color:white;
+        
+        font-weight: bold;
+        margin-left: 20px;
+        
+    }
+    .form-group input{
+        width: 50%;
+        margin: 10px 20px 40px 20px;
+        height:2rem;
+        border-radius: 5px;
+
+    }
+    .form-group textarea{
+        width:50%;
+        margin: 10px 20px 40px 20px;
+        height:10rem;
+        border-radius: 5px;
+    }
+    @media(max-width:480px){
+
+        .form-group textarea{
+            width:88%;
+        
+        }
+        .form-group input{
+            width:88%;
+        }
+        #save{
+            width:200px;
+
+        }
+    }   
+    button{
+        margin-left:20px;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 5px;
+        padding-left:15px;
+        padding-right:15px;
+        background-color:#FC6E51 ;
+        border:none;
+        color:#202020;
+        border-radius: 5px;
+    }
+
+    a{
+        color:#202020;
+        background-color:  #5D9CEC;
+        padding:10px;
+        padding-left:10px;
+        padding-right:10px;
+        font-size: 14px;
+        font-weight: bold;
+        margin-left:20px;
+        text-decoration: none;
+        border-radius: 5px;;
+        width:100px;
+    }
+    #HelpBtn{
+        background-color: #f8f865;
+        padding:10px;
+        cursor: pointer;
+    }
+    #save{
+    margin-left:23px;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    padding-left:15px;
+    padding-right:15px;
+    background-color:#FC6E51 ;
+    border:none;
+    color:#202020;
+    border-radius: 5px;
+    width:100px;
+    cursor: pointer;
+    
+    
+  }
+  #save:hover{
+      background-color:#f85635 ;
+  }
+  a:hover{
+      background-color: #498ee9;
+  }
+
+</style>
+
+<script>
+    let btn = document.getElementById("HelpBtn");
+    //        
+
+    function showHelp(){
+        if(btn.value == "1"){
+            btn.textContent = "Add after every word ( , ) for new Tag : example (tag1,tag2,tag3)";
+            btn.value = "0";
+        }
+        else if(btn.value =="0"){
+            btn.textContent = "How to add a new tag"
+            btn.value = "1"
+        }
+    }
+</script>
+
