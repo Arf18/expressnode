@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const router = require("./router/users");
 const NewArticle = require("./router/NewArticle");
-const port = 3002;
+const port = 3000;
 const connection = require("./database")
 const flash = require("express-flash")
 
@@ -18,7 +18,7 @@ app.use(express.static('views'));
 
 app.use("/" , NewArticle);
 
-app.listen(port , function(){console.log("Connected!  http://localhost:3001")});
+app.listen(port , '0.0.0.0',function(){console.log("Connected!  http://localhost:3001")});
 
 
 
