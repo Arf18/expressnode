@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "start1": "netlify-lambda serve functions",
+    "build": "netlify-lambda build functions"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +16,7 @@
     "expres": "^0.0.5",
     "express": "^4.17.3",
     "express-flash": "^0.0.2",
-    "html": "^1.0.0"
+    "html": "^1.0.0",
+    "netlify-lambda": "^2.0.15"
   }
 }
