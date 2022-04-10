@@ -17,9 +17,9 @@ var data;
 app.use(express.static('views'));
 
 app.use("/" , NewArticle);
-
-app.listen(port , '0.0.0.0',function(){console.log("Connected!  http://localhost:3001")});
-
+app.listen(port|process.env.PORT,function(){
+    console.log("Connected!")
+});
 
 
 
