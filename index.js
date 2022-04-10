@@ -17,7 +17,9 @@ app.use(express.static('views'));
 
 app.use("/home" , NewArticle);
 
-app.listen(process.env.PORT);
+app.listen(port|process.env.PORT,function(){
+    console.log("Connected!")
+});
 
 
 
