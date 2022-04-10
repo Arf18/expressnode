@@ -5,7 +5,7 @@ const NewArticle = require("./router/NewArticle");
 const port = 3000;
 const connection = require("./database");
 const flash = require("express-flash");
-
+const cloud = require("cloud").example;
 app.set("view engine","ejs");
 app.set("index" , "./viwes/indx.ejs");
 app.use(express.urlencoded({extended:false}))
@@ -17,8 +17,7 @@ app.use(express.static('views'));
 
 app.use("/home" , NewArticle);
 
-app.listen(port , '0.0.0.0',function(){console.log("Connected!  http://localhost:3001")});
-
+app.listen(process.env.PORT);
 
 
 
