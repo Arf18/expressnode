@@ -349,13 +349,41 @@ width:50%;
     </header>
     <h3>Hi Im <strong style="color:#fc6e51">Abdrraouf Chebli</strong> Im programmer.</h3>
     
+
+
+
+
+
     
     <div class = "page">
         <a class = "new" href="NewArticle">new Article</a>
-        <% articles.forEach(article =>{ %>
+        <%for(let i = articles.length-1 ;i>=0;i--){%>
+            <%let article = articles[i]%>
+            
             <div class="article">
                 <h2><%=article.title%></h2>
-                <p class = "date"><b style="font-weight: bolder;">Date</b>: <%=article.date.toLocaleDateString()%></p>
+                <%let newdate = new Date()%>
+                <%var hours = article.date.getHours();%>
+                <%var ampm = hours >= 12 ? 'PM' : 'AM';%>
+                <%hours = hours % 12;%>
+                <%hours = hours ? hours : 12;%>
+                <%var minutes = article.date.getMinutes()%>
+                <%minutes = minutes < 10 ? '0' + minutes : minutes;%>
+                
+                    <%let MinutesTime = newdate.getMinutes() - article.date.getMinutes()%>
+                    <%let HourTime = newdate.getHours() - article.date.getHours()%>
+                    
+                    <%if(article.date.getDay() == newdate.getDay()){%>
+                        <%if(HourTime == 0){%>
+                            <p><b style="color: #595959;"><%=MinutesTime%> min</b></p>
+                        <%}else{%>
+                            <p><b style="color: #595959;"><%=HourTime%> h</b></p>
+                            <%}%>
+                        
+                    <%}else{%>
+                        <p><b style="color: #595959;"><%=article.date.toLocaleDateString()%></p>
+
+                    <%}%>
                 <p class="text">
                     <%=article.description%>
                     
@@ -389,7 +417,8 @@ width:50%;
                 </div>
                 
             </div>
-        <% }) %>
+        
+            <%}%>
     </div>
 </body>
 </html>

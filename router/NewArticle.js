@@ -106,6 +106,9 @@ NewArticle.post("/NewArticle" , (req,res,next)=>{
 	let str = [];
 	str.push(tg);
 	
+	date.getHours();
+	date.getMinutes();
+	date.getSeconds();
 	pool.getConnection((err,connection)=>{
 		if(err)throw err;
 		console.log("Pool DB Connected!!",connection.threadId);
